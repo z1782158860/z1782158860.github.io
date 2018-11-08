@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    	
+<script src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.4.1.js"></script>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_908554_03aqehe0aohb.css">
+    <style>
+   .Audio{ width: 40px; margin: 0 ; float: right;}
+.controls{width: 100%; height: 40px; padding: 0; text-align: center;}
+.play-pause{border: 0; outline: 0; padding: 0; width: 40px; height: 40px; margin: 0; background: none; display: inline-block; vertical-align: middle;}
+.icon-play{width: 40px; height: 40px; background: url(play.png) no-repeat; display: block; color: #478f59;}
+.icon-pause{width: 40px; height: 40px; background: url(pause.png) no-repeat; display: block; color: #478f59;}
+.controls span{color: #b3b5b7; font-size: 12px; display: inline-block; width: 40px;}
+
+
+    </style>
+</head>
+
+<body>
+        <div class="Audio">
+                <audio id="audioTag" src="http://m10.music.126.net/20181108094440/b504b31c6f14ded2cb5da9596850c53c/ymusic/363b/72ef/7661/0b373b6cdfc54e3022ef436c3ad58ec3.mp3" ></audio>
+                <div class="controls">
+                    <button class="play-pause" id="playPause">
+                        <span class="icon-btn icon-play"></span>
+                    </button>
+                </div>
+            </div>
+            <a href="http://123.207.24.65/">my web site</a><br />
+            <a href="http://123.207.24.65/b">linbb bbs</a>
+            
+
+<script>
+
+ $(function(){
+
+var audio = $('#audioTag').get(0);
+//播放暂停控制
+$('#playPause').click(function(){
+
+    //改变暂停/播放icon
+    if(audio.paused){
+        audio.play();
+        $('.icon-btn').removeClass('icon-play').addClass('icon-pause')
+    } else{
+        audio.pause();
+        $('.icon-btn').removeClass('icon-pause').addClass('icon-play')
+    }
+})
+
+})
+
+
+
+</script>
+</body>
+</html>
